@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="keywords" content="barbershop, haircut, eastland, grooming" />
+  <title>Schedule Appointment - Eastland Barber Shop</title>
+  <link rel="stylesheet" href="css/styles.css" />
+  <link rel="stylesheet" href="css/layout.css" />
+  <link rel="stylesheet" href="css/appointment.css" />
+</head>
+<body>
+  <header>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="schedule.html">Schedule Appointment</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main>
+    <section>
+      <h2>Schedule Appointment</h2>
+      <p>
+        We look forward to your visit. Please make sure to arrive at least 15
+        minutes prior to your appointment to allow time for check-in.
+        Appointments arriving 10 minutes after the scheduled start time will
+        need to be rescheduled.
+        <br>
+        <br>
+      </p>
+    </section>
+    <div id="currentDateTime"></div>
+    <div id="countdown"></div>
+    <!-- Create and format a form with multiple field sets -->
+    <form action="#" method="POST">
+        <fieldset>
+            <legend>Personal Information</legend>
+            <label for="name">Full Name:</label>
+            <!-- Validate data with patterns and field lengths -->
+            <!-- Validate data with by having certain fields required -->
+            <input type="text" id="name" name="name" required minlength="3" pattern="[A-Za-z\s]+" title="Please enter your name.">
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="phone">Phone Number:</label>
+            <input type="tel" id="phone" name="phone" pattern="\d{10}" required title="Please enter a phone number.">
+        </fieldset>
+
+        <fieldset>
+            <legend>Appointment Details</legend>
+            <!-- date/time -->
+            <label for="date">Preferred Date:</label>
+            <input type="date" id="date" name="date" required>
+
+            <label for="time">Preferred Time:</label>
+            <input type="time" id="time" name="time" required>
+
+            <label for="barber">Select Barber:</label>
+            <!-- Create a selection list -->
+            <select id="barber" name="barber" required>
+                <option value="">Please Select a barber</option>
+                <option value="Beyonce">Beyonce</option>
+                <option value="Jay-z">Jay-Z</option>
+                <option value="Rkelly">R. Kelly</option>
+            </select>
+
+            <label>Service Type:</label>
+            <!-- radio buttons -->
+            <input type="radio" id="haircut" name="service" value="haircut" required>
+            <label for="haircut">Haircut</label>
+            <input type="radio" id="shave" name="service" value="shave">
+            <label for="shave">Shave</label>
+            <input type="radio" id="both" name="service" value="both">
+            <label for="both">Both</label>
+        </fieldset>
+
+        <fieldset>
+            <legend>Additional Information</legend>
+            <label for="duration">Appointment Duration (minutes):</label>
+            <!-- spinners -->
+            <input type="number" id="duration" name="duration" min="15" max="120" step="15" required>
+
+            <label for="satisfaction">Rate Your Last Visit:</label>
+            <!-- range sliders -->
+            <input type="range" id="satisfaction" name="satisfaction" min="1" max="10">
+
+            <label for="notes">Additional Notes:</label>
+            <textarea id="notes" name="notes" rows="4" placeholder="Enter any additional information"></textarea>
+        </fieldset>
+
+        <fieldset>
+            <legend>Preferences</legend>
+            <!-- Include a datalist and use it for input -->
+            <label for="datalist">Preferred Style:</label>
+            <input list="styles" id="datalist" name="style">
+            <datalist id="styles">
+                <option value="Buzz Cut"></option>
+                <option value="Fade"></option>
+                <option value="Crew Cut"></option>
+                <option value="Other"></option>
+            </datalist>
+
+            <label>Extras:</label>
+            <!-- check boxes -->
+            <input type="checkbox" id="beard_trim" name="extras" value="beard_trim">
+            <label for="beard_trim">Beard Trim</label>
+            <input type="checkbox" id="shampoo" name="extras" value="shampoo">
+            <label for="shampoo">Shampoo</label>
+            <input type="checkbox" id="scalp_massage" name="extras" value="scalp_massage">
+            <label for="scalp_massage">Scalp Massage</label>
+        </fieldset>
+
+        <div class="buttons">
+          <!-- create a submit and cancel/reset button -->
+            <input type="submit" value="Submit">
+            <input type="reset" value="Cancel">
+        </div>
+    </form>
+  </main>
+  <footer>
+    <p>
+      &copy; 2024 Eastland Barber Shop, 500 Central Ave, Charlotte, NC 28227,
+      704-123-4567
+    </p>
+  </footer>
+</body>
+
+</html>
